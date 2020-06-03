@@ -1,41 +1,58 @@
 <template>
-    <div class="container">
-        <ReaderSlider :options="options" :items="items">
-            <template v-slot:item="{ item, index, active }">
-                <ReaderItem :index="index" :active="active">
-                    <img :src="item.src"/>
-                    <p>Strona: {{ index + 1 }}</p>
-                </ReaderItem>
-             </template>
-            <template v-slot:pagination="{ item, current, total }">
-                <ReaderPagination :current="current" :total="total">
-                    <div> {{ current + '/' + total }} </div>
-                </ReaderPagination>
-            </template>
+  <div class="demo-app">
+    <button @click="$refs.slider.prev()">prev</button>
+    <button @click="$refs.slider.slideTo(Math.floor(Math.random() * items.length))">Slide to rand</button>
+    <button @click="$refs.slider.next()">next</button>
+    <ReaderSlider ref="slider" :options="options" :items="items">
+      <template v-slot:item="{ item, index, active }">
+        <ReaderItem :index="index" :active="active">
+          <img :src="item.src"/>
+          <p>index: {{ index }}</p>
+          <template v-slot:loading>
+            <p>loading</p>
+          </template>
+        </ReaderItem>
+      </template>
+      <template v-slot:pagination="{ item, current, total }">
+        <ReaderPagination :current="current" :total="total">
+          <div> {{ current + '/' + total }} </div>
+        </ReaderPagination>
+      </template>
     </ReaderSlider>
-    </div>
+  </div>
 </template>
- 
+
 <script>
-    export default {
-    data () {
-        const items = []
+// import ReaderSlider from '@/components/reader/ReaderSlider.vue'
+// import ReaderItem from '@/components/reader/ReaderItem.vue'
+// import ReaderPagination from '@/components/reader/ReaderPagination.vue'
+export default {
+  name: 'BasicUsage',
+  // components: { ReaderSlider, ReaderPagination, ReaderItem },
+  data () {
+    const items = []
         for (let i = 1; i <= 9; i++) {
         items.push({ src: `/manga/3/00${i}.jpg` })
-        }
-        return {
-        items,
-        options: {
-           width: "90%",
-           height: "90%",
-           direction: "vertical",
-           virtual: false
-        }
-        }
     }
+    return {
+      items,
+      options: {
+        virtual: true,
+        pagination: true,
+        direction: 'vertical',
+        margin: '0px',
+        width: '590px',
+        height: '940px',
+        inertia: true,
+        loading: true,
+        batch: 10,
+        speedLimit: { down: 0.2, up: 8 }
+      }
     }
-</script> 
- 
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 img{
     max-height: 100%;
