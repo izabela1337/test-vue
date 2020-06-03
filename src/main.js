@@ -5,8 +5,8 @@ import "./plugins/bootstrap-vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import VueImg from 'v-img';
-import Reader from 'scarlet-reader';
+import VueImg from "v-img";
+import Reader from "scarlet-reader";
 
 Vue.use(VueImg);
 Vue.use(Reader);

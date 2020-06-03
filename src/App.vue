@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-     <navbar></navbar>
+      <navbar></navbar>
     </div>
     <router-view />
   </div>
@@ -10,12 +10,15 @@
 <script>
 import navbar from "@/components/navbar.vue";
 export default {
-  components:{
-    "navbar": navbar
+  components: {
+    navbar: navbar
   }
-}
+};
 </script>
 <style lang="scss">
+body {
+  background-color: rgb(17, 17, 17);
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
