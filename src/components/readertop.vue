@@ -1,7 +1,8 @@
+/* eslint-disable prettier/prettier */
 <template>
   <div class="container">
     <div class="featured">
-      Pokusa Anioła
+      Przykładowy Komiks
     </div>
     <div class="jumbotron row entryinfobox" id="eib">
       <div class="col-md-4 multi-collapse collapse show">
@@ -17,15 +18,7 @@
             >Yakushiji Saaya (Cure Ange)</a
           >
         </h4>
-        <h4>
-          Tagi: <a href="/search/yuri">yuri</a>
-          <a href="/search/nauczycielka">nauczycielka</a>
-          <a href="/search/palcówka">palcówka</a>
-          <a href="/search/różnica wieku">różnica wieku</a>
-          <a href="/search/okulary">okulary</a>
-          <a href="/search/miłość">miłość</a>
-        </h4>
-        <h4>Autor: Negom</h4>
+        <h4>Autor: xyz</h4>
 
         <h4>Tłumaczenie: HentaiHaven.pl</h4>
       </div>
@@ -38,7 +31,7 @@
           aria-expanded="true"
           aria-controls="collapseExample"
           style="font-family: 'Rubik', sans-serif;"
-        >
+          >
           zwiń/rozwiń informacje
         </button>
       </div>

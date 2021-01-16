@@ -40,7 +40,7 @@ export default {
   },
   data() {
     const items = [];
-    for (let i = 1; i <= 32; i++) {
+    for (let i = 1; i <= 6; i++) {
       items.push({ src: `/manga/3/` + (i < 10 ? `00` : `0`) + `${i}.jpg` });
     }
     return {
